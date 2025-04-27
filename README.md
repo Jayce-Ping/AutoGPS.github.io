@@ -1,6 +1,1 @@
-# AutoGPS
-
-## Framework
-
-
-## Paper
+# AutoGPS Project Page

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>AutoGPS</title>
+    <link rel="shortcut icon" href="./img/3124850.svg">
+
+    <!--        &lt;!&ndash; Global site tag (gtag.js) - Google Analytics &ndash;&gt;-->
+    <!--        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111713571-1"></script>-->
+    <!--        <script>-->
+    <!--            window.dataLayer = window.dataLayer || [];-->
+    <!--            function gtag(){dataLayer.push(arguments);}-->
+    <!--            gtag('js', new Date());-->
+    <!--            gtag('config', 'UA-111713571-1');-->
+    <!--        </script>-->
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--        <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <!--        <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">-->
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <!--        &lt;!&ndash; Icon CSS&ndash;&gt;-->
+    <!--        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">-->
+    <!--        <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">-->
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="./css/project.css">
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1010.0" data-gr-ext-installed="">
+
+    <!-- Navigation Bar-->
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <a class="navbar-brand" href="#">AutoGPS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Paper">Paper</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Code">Code</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Citation">Citation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Authors">Authors</a>
+                </li>
+                <li class="nav-item" style="margin-right: 10px;">
+                    <a class="nav-link" href="#Contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header Banner -->
+    <header class="page-header" role="banner">
+        <h1 class="project-name">
+            <!-- <img src="./img/3124850.svg" alt="Logo" height="50px"> -->
+            AutoGPS
+        </h1>
+        <h2 class="project-tagline">
+            AutoGPS: Automated Geometry Problem Solving via <br> Multimodal Formalization and Deductive Reasoning
+        </h2>
+    </header>
+
+    <!-- About Inter-GPS -->
+    <div class="section" style="">
+        <img src="./img/framework.png" style="width: 100%; padding-top: 1em">
+        <br><br>
+        <heading>
+            About AutoGPS
+        </heading>
+        <p>
+            Geometric problem solving presents distinctive challenges in artificial intelligence,
+            requiring not only robust multimodal comprehension but also exceptional mathematical reasoning capabilities.
+            <i>Current methodologies exhibit deficiencies in processing multimodal information while being constrained
+                by limited interpretability and reliability in their reasoning processes.</i>
+            <br><br>
+            To address these challenges, we propose <strong>AutoGPS</strong>,
+            a neuro-symbolic framework that synergistically integrates the multimodal understanding strengths of neural
+            methods with the rigorous reasoning capabilities of symbolic systems for automated geometric reasoning.
+            Specifically, AutoGPS employs <strong>a multimodal formalization framework</strong> to systematically
+            translate geometry problems described through textual and visual modalities into structured formal language
+            representations.
+            This is followed by <strong>deductive symbolic reasoning</strong> operations that execute mathematically
+            verifiable derivations,
+            yielding <i>human-readable solving procedures</i>.
+            <br><br>
+            Extensive experimental evaluations demonstrate that our method establishes new state-of-the-art performance
+            on benchmark datasets (Geometry3K and PGPS9K),
+            while significantly enhancing interpretability through verifiable proof generation.
+            Furthermore, leveraging enhanced interpretability and deductive rigor,
+            we identified and rectified inherent inconsistencies within the Geometry3K dataset.
+        </p>
+    </div>
+
+    <!-- Solution Examples -->
+    <div class="section" id="Examples" style="">
+        <heading id="examples">
+            Problem Solving Examples
+        </heading>
+
+        <p>The following examples illustrate the AutoGPS framework's capabilities in solving geometry problems.
+            Click on the buttons below to switch between different problems and views.</p>
+
+        <!-- 题目选择按钮 -->
+        <div class="problem-selector" style="margin-bottom: 20px; text-align: center;">
+            <div class="btn-group" role="group" aria-label="problem selector">
+                <button type="button" class="btn btn-outline-primary problem-btn active" onclick="changeProblem(1)">Problem 1</button>
+                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(2)">Problem 2</button>
+                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(3)">Problem 3</button>
+                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(4)">Problem 4</button>
+                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(5)">Problem 5</button>
+                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(6)">Problem 6</button>
+            </div>
+        </div>
+
+        <!-- 问题内容 -->
+        <div id="problem-content">
+            <!-- Problem 1 -->
+            <div id="problem-1" class="problem-container active">
+                <div class="row">
+                    <!-- Problem Description on the left -->
+                    <div class="col-md-5">
+                        <div class="problem-description">
+                            <h4>Problem Description</h4>
+                            <!-- Image switch button -->
+                            <div class="image-selector" style="margin-bottom: 10px; text-align: center;">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="image selector">
+                                    <button type="button" class="btn btn-outline-info image-btn active"
+                                        onclick="changeImage(1, 'original')">Original</button>
+                                    <button type="button" class="btn btn-outline-info image-btn"
+                                        onclick="changeImage(1, 'annotated')">Annotated</button>
+                                </div>
+                            </div>
+
+                            <!-- Image container -->
+                            <div class="image-container">
+                                <img id="image-1-original" src="./img/2458_diagram.png" alt="Original Diagram"
+                                    style="display: block;">
+                                <img id="image-1-annotated" src="./img/2458_annotated.png" alt="Annotated Diagram"
+                                    style="display: none;">
+                            </div>
+                            <p style="text-align: left;">
+                                Find the measure of ∠CFD on ⊙F with diameter AC.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- content on the right -->
+                    <div class="col-md-7">
+                        <!-- view selector button -->
+                        <div class="view-selector" style="margin-bottom: 15px; text-align: center;">
+                            <div class="btn-group" role="group" aria-label="view selector">
+                                <button type="button" class="btn btn-outline-secondary view-btn active"
+                                    onclick="changeView(1, 'formalization')">Formalization</button>
+                                <button type="button" class="btn btn-outline-secondary view-btn"
+                                    onclick="changeView(1, 'proof-graph')">Proof Graph</button>
+                                <button type="button" class="btn btn-outline-secondary view-btn"
+                                    onclick="changeView(1, 'solution')">Stepwise Solution</button>
+                            </div>
+                        </div>
+
+                        <!-- view content -->
+                        <div class="view-content">
+                            <div id="view-1-formalization" class="view-item active">
+                                <pre
+                                    style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;">
+PointLiesOnCircle(D, Circle(F, radius_0_0))
+PointLiesOnCircle(A, Circle(F, radius_0_0))
+PointLiesOnCircle(C, Circle(F, radius_0_0))
+PointLiesOnCircle(B, Circle(F, radius_0_0))
+Equals(MeasureOf(Angle(D, F, C)), 4a-1)
+Equals(MeasureOf(Arc(A, D)), 2a-5)
+Equals(MeasureOf(Angle(C, F, B)), 72)
+Circle(F)
+IsDiameterOf(Line(A,C),Circle(F))
+Find(MeasureOf(Angle(C,F,D)))
+                    </pre>
+                            </div>
+                            <div id="view-1-proof-graph" class="view-item" style="display: none;">
+                                <img src="./img/2458_proof_graph.png" alt="problem 1 proof graph"
+                                    style="max-width: 100%; margin: 0 auto; display: block;">
+                            </div>
+                            <div id="view-1-solution" class="view-item" style="display: none;">
+                                <pre
+                                    style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;">
+1: Known facts: start ⇒ ∠DFC, pi * ((4 * a - 1) / 180) = ∠DFC, 3.14 = pi, pi * ((2 * a - 5) / 180) = ∠AFD, ∠AFD
+2: Substitution: pi * ((4 * a - 1) / 180) = ∠DFC, 3.14 = pi ⇒ 3.14 * ((4 * a - 1) / 180) = ∠DFC
+3: Substitution: 3.14 = pi, pi * ((2 * a - 5) / 180) = ∠AFD ⇒ 3.14 * ((2 * a - 5) / 180) = ∠AFD
+4: Straight Angle: ∠DFC, ∠AFD ⇒ pi = ∠AFD + ∠DFC
+5: Transtivity of Equivalence: 3.14 = pi, pi = ∠AFD + ∠DFC ⇒ 3.14 = ∠AFD + ∠DFC
+6: Solve Linear Equation System: 3.14 = ∠AFD + ∠DFC, 3.14 * ((4 * a - 1) / 180) = ∠DFC, 3.14 * ((2 * a - 5) / 180) = ∠AFD ⇒ 2.15 = ∠DFC
+Final answer: 2.15
+                            </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem 2 -->
+            <div id="problem-2" class="problem-container" style="display: none;">
+                <div class="row">
+                    <!-- Problem Description on the left -->
+                    <div class="col-md-5">
+                        <div class="problem-description">
+                            <h4>Problem Description</h4>
+                            <!-- Image switch button -->
+                            <div class="image-selector" style="margin-bottom: 10px; text-align: center;">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="image selector">
+                                    <button type="button" class="btn btn-outline-info image-btn active"
+                                        onclick="changeImage(2, 'original')">Original</button>
+                                    <button type="button" class="btn btn-outline-info image-btn"
+                                        onclick="changeImage(2, 'annotated')">Annotated</button>
+                                </div>
+                            </div>
+
+                            <!-- Image container -->
+                            <div class="image-container">
+                                <img id="image-2-original" src="./img/2402_diagram.png" alt="Original Diagram"
+                                    style="display: block;">
+                                <img id="image-2-annotated" src="./img/2402_annotated.png" alt="Annotated Diagram"
+                                    style="display: none;">
+                            </div>
+                            <p style="text-align: left;">
+                                Circle O has a radius of 13 inches. Radius O B is perpendicular to chord C D which is 24
+                                inches long. Find O X.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- content on the right -->
+                    <div class="col-md-7">
+                        <!-- view selector button -->
+                        <div class="view-selector" style="margin-bottom: 15px; text-align: center;">
+                            <div class="btn-group" role="group" aria-label="view selector">
+                                <button type="button" class="btn btn-outline-secondary view-btn active"
+                                    onclick="changeView(2, 'formalization')">Formalization</button>
+                                <button type="button" class="btn btn-outline-secondary view-btn"
+                                    onclick="changeView(2, 'proof-graph')">Proof Graph</button>
+                                <button type="button" class="btn btn-outline-secondary view-btn"
+                                    onclick="changeView(2, 'solution')">Stepwise Solution</button>
+                            </div>
+                        </div>
+
+                        <!-- view content -->
+                        <div class="view-content">
+                            <div id="view-2-formalization" class="view-item active">
+                                <pre
+                                    style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;">
+Equals(LengthOf(Line(C, D)), 24)
+Equals(LengthOf(Line(O, B)), 13)
+Equals(RadiusOf(Circle(O)), 13)
+IsChordOf(Line(C, D), Circle(O))
+Perpendicular(Line(B, X), Line(D, X))
+Perpendicular(Line(O, B), Line(C, D))
+PointLiesOnCircle(B, Circle(O, radius_0_0))
+PointLiesOnCircle(C, Circle(O, radius_0_0))
+PointLiesOnCircle(D, Circle(O, radius_0_0))
+PointLiesOnLine(X, Line(B, O))
+PointLiesOnLine(X, Line(C, D))
+Find(LengthOf(Line(O, X)))
+                    </pre>
+                            </div>
+                            <div id="view-2-proof-graph" class="view-item" style="display: none;">
+                                <img src="./img/2402_proof_graph.png" alt="problem 2 proof graph"
+                                    style="max-width: 100%; margin: 0 auto; display: block;">
+                            </div>
+                            <div id="view-2-solution" class="view-item" style="display: none;">
+                                <pre
+                                    style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;">
+1: Known facts: start ⇒ 13 = radius_0_0, CD, DO, D on ⊙(O, radius_0_0), CX ⊥ OX, CO, OX, ∠OCX, C on ⊙(O, radius_0_0), ∠OCD, 24 = CD, CX, X on CD
+2: Point On Circle Def: D on ⊙(O, radius_0_0) ⇒ radius_0_0 = DO
+3: Definition of Triangle: DO, CD, CO ⇒ △CDO
+4: Point On Circle Def: C on ⊙(O, radius_0_0) ⇒ radius_0_0 = CO
+5: Definition of Triangle: CO, OX, CX ⇒ △COX
+6: Same Angle: ∠OCD, X on CD ⇒ ∠OCD = ∠OCX
+7: Transtivity of Equivalence: radius_0_0 = DO, 13 = radius_0_0 ⇒ 13 = DO
+8: Law of Cosines: △CDO ⇒ (CD ** 2 + CO ** 2) - DO ** 2 = 2 * CD * CO * cos(∠OCD)
+9: Transtivity of Equivalence: 13 = radius_0_0, radius_0_0 = CO ⇒ 13 = CO
+10: Sin Function Definition: ∠OCX, △COX, CX ⊥ OX ⇒ OX / CO = sin(∠OCX)
+11: Substitution: 13 = CO, ∠OCD = ∠OCX, (CD ** 2 + CO ** 2) - DO ** 2 = 2 * CD * CO * cos(∠OCD), 13 = DO, 24 = CD ⇒ (13 ** 2 + 24 ** 2) - 13 ** 2 = 13 * 2 * 24 * cos(∠OCX)
+12: Solve Univariate Equation: (13 ** 2 + 24 ** 2) - 13 ** 2 = 13 * 2 * 24 * cos(∠OCX) ⇒ 0.39 = ∠OCX
+13: Substitution: 0.39 = ∠OCX, 13 = CO, OX / CO = sin(∠OCX) ⇒ sin(0.39) = OX / 13
+14: Solve Linear Equation System: sin(0.39) = OX / 13 ⇒ 5 = OX
+Final answer: 5
+                    </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem 3 -->
+            <div id="problem-3" class="problem-container" style="display: none;">
+                <div class="row">
+                    <!-- Problem Description on the left -->
+                    <div class="col-md-5">
+                        <div class="problem-description">
+                            <h4>Problem Description</h4>
+                            <!-- Image switch button -->
+                            <div class="image-selector" style="margin-bottom: 10px; text-align: center;">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="image selector">
+                                    <button type="button" class="btn btn-outline-info image-btn active"
+                                        onclick="changeImage(3, 'original')">Original</button>
+                                    <button type="button" class="btn btn-outline-info image-btn"
+                                        onclick="changeImage(3, 'annotated')">Annotated</button>
+                                </div>
+                            </div>
+
+                            <!-- Image container -->
+                            <div class="image-container">
+                                <img id="image-3-original" src="./img/2556_diagram.png" alt="Original Diagram"
+                                    style="display: block;">
+                                <img id="image-3-annotated" src="./img/2556_annotated.png" alt="Annotated Diagram"
+                                    style="display: none;">
+                            </div>
+
+                            <p style="text-align: left;">
+                                Find x. Assume that segments that appear to be tangent are tangent.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- content on the right -->
+                    <div class="col-md-7">
+                        <!-- view selector button -->
+                        <div class="view-selector" style="margin-bottom: 15px; text-align: center;">
+                            <div class="btn-group" role="group" aria-label="view selector">
+                                <button type="button" class="btn btn-outline-secondary view-btn active"
+                                    onclick="changeView(3, 'formalization')">Formalization</button>
+                                <button type="button" class="btn btn-outline-secondary view-btn"
+                                    onclick="changeView(3, 'proof-graph')">Proof Graph</button>
+                                <button type="button" class="btn btn-outline-secondary view-btn"
+                                    onclick="changeView(3, 'solution')">Stepwise Solution</button>
+                            </div>
+                        </div>
+
+                        <!-- view content -->
+                        <div class="view-content">
+                            <div id="view-3-formalization" class="view-item active">
+                                <pre
+                                    style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;">
+Equals(LengthOf(Line(A, B)), x)
+Equals(LengthOf(Line(A, F)), 8)
+Equals(LengthOf(Line(C, B)), 6)
+Equals(LengthOf(Line(E, F)), 8)
+PointLiesOnCircle(B, Circle(C, radius_0_0))
+PointLiesOnCircle(D, Circle(C, radius_0_0))
+PointLiesOnCircle(F, Circle(C, radius_0_0))
+PointLiesOnLine(B, Line(A, C))
+PointLiesOnLine(D, Line(C, E))
+PointLiesOnLine(F, Line(A, E))
+Tangent(Line(A, B), Circle(C, radius_0_0))
+Tangent(Line(A, F), Circle(C, radius_0_0))
+Tangent(Line(C, E), Circle(C, radius_0_0))
+Find(x)
+                    </pre>
+                            </div>
+                            <div id="view-3-proof-graph" class="view-item" style="display: none;">
+                                <img src="./img/2556_proof_graph.png" alt="problem 3 proof graph"
+                                    style="max-width: 100%; margin: 0 auto; display: block;">
+                            </div>
+                            <div id="view-3-solution" class="view-item" style="display: none;">
+                                <pre
+                                    style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;">
+1: Known facts: start ⇒ B on ⊙(C, radius_0_0), Tangent(AF, ⊙(C, radius_0_0)), B on AC, AC, AF, 8 = AF, CF, x = AB, 6 = BC, F on ⊙(C, radius_0_0)
+2: Point On Circle Def: B on ⊙(C, radius_0_0) ⇒ radius_0_0 = BC
+3: Line Segment Split: B on AC ⇒ AC = AB + BC
+4: Definition of Triangle: AF, CF, AC ⇒ △ACF
+5: Tangent Definition: Tangent(AF, ⊙(C, radius_0_0)), F on ⊙(C, radius_0_0) ⇒ AF ⊥ CF
+6: Point On Circle Def: F on ⊙(C, radius_0_0) ⇒ radius_0_0 = CF
+7: Transtivity of Equivalence: radius_0_0 = BC, 6 = BC ⇒ 6 = radius_0_0
+8: Substitution: x = AB, AC = AB + BC, 6 = BC ⇒ 6 + x = AC
+9: Pythagorean Theorem: AF ⊥ CF, △ACF ⇒ AC ** 2 = AF ** 2 + CF ** 2
+10: Transtivity of Equivalence: 6 = radius_0_0, radius_0_0 = CF ⇒ 6 = CF
+11: Substitution: 6 + x = AC, 6 = CF, AC ** 2 = AF ** 2 + CF ** 2, 8 = AF ⇒ 6 ** 2 + 8 ** 2 = (6 + x) ** 2
+12: Solve Univariate Equation: 6 ** 2 + 8 ** 2 = (6 + x) ** 2 ⇒ 4 = x
+Final answer: 4
+                    </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Problem 4 -->
+            <div id="problem-4" class="problem-container" style="display: none;">
+                <div class="row">
+                    <!-- Problem Description on the left -->
+                    <div class="col-md-5">
+                        <div class="problem-description">
+                            <h4>Problem Description</h4>
+                            <!-- Image switch button -->
+                            <div class="image-selector" style="margin-bottom: 10px; text-align: center;">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="image selector">
+                                    <button type="button" class="btn btn-outline-info image-btn active"
+                                        onclick="changeImage(4, 'original')">Original</button>
+                                    <button type="button" class="btn btn-outline-info image-btn"
+                                        onclick="changeImage(4, 'annotated')">Annotated</button>
+                                </div>
+                            </div>
+
+                            <!-- Image container -->
+                            <div class="image-container">
+                                <img id="image-4-original" src="./img/2506_diagram.png" alt="Original Diagram"
+                                    style="display: block;">
+                                <img id="image-4-annotated" src="./img/2506_annotated.png" alt="Annotated Diagram"
+                                    style="display: none;">
+                            </div>
+
+                            <p style="text-align: left;">
+                                Use parallelogram J K L M to find measure of ∠ K J L if J K = 2 b + 3 and J M = 3 a.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- content on the right -->
+                    <div class="col-md-7">
+                        <!-- view selector button -->
+                        <div class="view-selector" style="margin-bottom: 15px; text-align: center;">
+                            <div class="btn-group" role="group" aria-label="view selector">
+                                <button type="button" class="btn btn-outline-secondary view-btn active"
+                                    onclick="changeView(4, 'formalization')">Formalization</button>
+                                <button type="button" class="btn btn-outline-secondary view-btn"
+                                    onclick="changeView(4, 'proof-graph')">Proof Graph</button>
+                                <button type="button" class="btn btn-outline-secondary view-btn"
+                                    onclick="changeView(4, 'solution')">Stepwise Solution</button>
+                            </div>
+                        </div>
+
+                        <!-- view content -->
+                        <div class="view-content">
+                            <div id="view-4-formalization" class="view-item active">
+                                <pre
+                                    style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;">
+PointLiesOnLine(R, Line(M, K))
+PointLiesOnLine(R, Line(J, L))
+Equals(LengthOf(Line(L, K)), 21)
+Equals(LengthOf(Line(M, J)), 3a)
+Equals(LengthOf(Line(M, L)), 45)
+Equals(LengthOf(Line(J, K)), 2b+3)
+Equals(MeasureOf(Angle(R, L, M)), 30)
+Equals(MeasureOf(Angle(R, L, K)), 70)
+Parallelogram(J,K,L,M)
+Equals(LengthOf(Line(J,K)),2b+3)
+Equals(LengthOf(Line(J,M)),3a)
+Find(MeasureOf(Angle(K,J,L)))
+                    </pre>
+                            </div>
+                            <div id="view-4-proof-graph" class="view-item" style="display: none;">
+                                <img src="./img/2506_proof_graph.png" alt="problem 4 proof graph"
+                                    style="max-width: 100%; margin: 0 auto; display: block;">
+                            </div>
+                            <div id="view-4-solution" class="view-item" style="display: none;">
+                                <pre
+                                    style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;">
+1: Known facts: start ⇒ Parallelogram(J, K, L, M), ∠JLM, pi * (30 / 180) = ∠RLM, ∠LJK, R on JL
+2: Parallelogram Opposite Lines Parallel: Parallelogram(J, K, L, M) ⇒ JK || ML
+3: Same Angle: R on JL, ∠LJK ⇒ ∠LJK = ∠RJK
+4: Same Angle: ∠JLM, R on JL ⇒ ∠JLM = ∠RLM
+5: Alternate Interior Angle Theorem: JK || ML ⇒ ∠JLM = ∠LJK
+6: Transtivity of Equivalence: ∠LJK = ∠RJK, ∠JLM = ∠LJK ⇒ ∠JLM = ∠RJK
+7: Transtivity of Equivalence: ∠JLM = ∠RLM, pi * (30 / 180) = ∠RLM, ∠JLM = ∠RJK ⇒ pi * (30 / 180) = ∠RJK
+8: Transtivity of Equivalence: pi * (30 / 180) = ∠RJK, ∠LJK = ∠RJK ⇒ pi * (30 / 180) = ∠LJK
+9: Evaluate: pi * (30 / 180) = ∠LJK ⇒ 0.52 = ∠LJK
+Final answer: 0.52
+                    </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem 5 -->
+            <div id="problem-5" class="problem-container" style="display: none;">
+                <div class="row">
+                    <!-- Problem Description on the left -->
+                    <div class="col-md-5">
+                        <div class="problem-description">
+                            <h4>Problem Description</h4>
+                            <!-- Image switch button -->
+                            <div class="image-selector" style="margin-bottom: 10px; text-align: center;">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="image selector">
+                                    <button type="button" class="btn btn-outline-info image-btn active"
+                                        onclick="changeImage(5, 'original')">Original</button>
+                                    <button type="button" class="btn btn-outline-info image-btn"
+                                        onclick="changeImage(5, 'annotated')">Annotated</button>
+                                </div>
+                            </div>
+
+                            <!-- Image container -->
+                            <div class="image-container">
+                                <img id="image-5-original" src="./img/2630_diagram.png" alt="Original Diagram"
+                                    style="display: block;">
+                                <img id="image-5-annotated" src="./img/2630_annotated.png" alt="Annotated Diagram"
+                                    style="display: none;">
+                            </div>
+
+                            <p style="text-align: left;">
+                                Find B D if B F bisects ∠ A B C and A C || E D, B A = 6, B C = 7.5, A C = 9, and D E = 9.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- content on the right -->
+                    <div class="col-md-7">
+                        <!-- view selector button -->
+                        <div class="view-selector" style="margin-bottom: 15px; text-align: center;">
+                            <div class="btn-group" role="group" aria-label="view selector">
+                                <button type="button" class="btn btn-outline-secondary view-btn active"
+                                    onclick="changeView(5, 'formalization')">Formalization</button>
+                                <button type="button" class="btn btn-outline-secondary view-btn"
+                                    onclick="changeView(5, 'proof-graph')">Proof Graph</button>
+                                <button type="button" class="btn btn-outline-secondary view-btn"
+                                    onclick="changeView(5, 'solution')">Stepwise Solution</button>
+                            </div>
+                        </div>
+
+                        <!-- view content -->
+                        <div class="view-content">
+                            <div id="view-5-formalization" class="view-item active">
+                                <pre
+                                    style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;">
+PointLiesOnLine(C, Line(B, D))
+PointLiesOnLine(F, Line(A, C))
+PointLiesOnLine(F, Line(E, B))
+Parallel(Line(E, D), Line(A, C))
+Equals(MeasureOf(Angle(A, B, F)), MeasureOf(Angle(C, B, F)))
+BisectsAngle(Line(B,F),Angle(A,B,C))
+Parallel(Line(A,C),Line(E,D))
+Equals(LengthOf(Line(B,A)),6)
+Equals(LengthOf(Line(B,C)),7.5)
+Equals(LengthOf(Line(A,C)),9)
+Equals(LengthOf(Line(D,E)),9)
+Find(LengthOf(Line(B,D)))
+                    </pre>
+                            </div>
+                            <div id="view-5-proof-graph" class="view-item" style="display: none;">
+                                <img src="./img/2630_proof_graph.png" alt="problem 5 proof graph"
+                                    style="max-width: 100%; margin: 0 auto; display: block;">
+                            </div>
+                            <div id="view-5-solution" class="view-item" style="display: none;">
+                                <pre
+                                    style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;">
+1: Known facts: start ⇒ 7.5 = BC, 9 = DE, F on BE, ∠DBF, F on AC, C on BD, ∠BCA, AB, ∠CBF = ∠FBA, AC, BC, ∠DBE, 9 = AC, 6 = AB, AC || ED
+2: Line Segment Split: F on AC ⇒ AC = AF + CF
+3: Same Angle: ∠DBF, C on BD ⇒ ∠CBF = ∠DBF
+4: Same Angle: ∠BCA, F on AC ⇒ ∠BCA = ∠BCF
+5: Definition of Triangle: AB, BC, AC ⇒ △ABC
+6: Same Angle: F on BE, ∠DBE ⇒ ∠DBE = ∠DBF
+7: Corresponding Angle Theorem: AC || ED ⇒ ∠BCA = ∠BDE, ∠BED = ∠BFC
+8: Transtivity of Equivalence: 9 = AC, AC = AF + CF ⇒ 9 = AF + CF
+9: Triangle Angle Bisector Theorem: ∠CBF = ∠FBA, △ABC ⇒ BC / AB = CF / AF
+10: Transtivity of Equivalence: ∠DBE = ∠DBF, ∠CBF = ∠DBF ⇒ ∠CBF = ∠DBE
+11: Transtivity of Equivalence: ∠BCA = ∠BDE, ∠BCA = ∠BCF ⇒ ∠BCF = ∠BDE
+12: Substitution: BC / AB = CF / AF, 6 = AB, 7.5 = BC ⇒ 7.5 / 6 = CF / AF
+13: Angle-Angle Similarity Theorem: ∠CBF = ∠DBE, ∠BCF = ∠BDE, ∠BED = ∠BFC ⇒ △BCF ~ △BDE
+14: Similar Definition: △BCF ~ △BDE ⇒ ∠BED = ∠BFC, ∠CBF = ∠DBE, sim_ratio_triangle_b_c_f_triangle_b_d_e = CF / DE, sim_ratio_triangle_b_c_f_triangle_b_d_e = BC / BD
+15: Substitution: sim_ratio_triangle_b_c_f_triangle_b_d_e = CF / DE, 9 = DE ⇒ sim_ratio_triangle_b_c_f_triangle_b_d_e = CF / 9
+16: Substitution: sim_ratio_triangle_b_c_f_triangle_b_d_e = BC / BD, 7.5 = BC ⇒ sim_ratio_triangle_b_c_f_triangle_b_d_e = 7.5 / BD
+17: Solve Linear Equation System: 7.5 / 6 = CF / AF, sim_ratio_triangle_b_c_f_triangle_b_d_e = CF / 9, 9 = AF + CF ⇒ 0.56 = sim_ratio_triangle_b_c_f_triangle_b_d_e
+18: Transtivity of Equivalence: 0.56 = sim_ratio_triangle_b_c_f_triangle_b_d_e, sim_ratio_triangle_b_c_f_triangle_b_d_e = 7.5 / BD ⇒ 0.56 = 7.5 / BD
+19: Solve Linear Equation System: 0.56 = 7.5 / BD ⇒ 13.5 = BD
+Final answer: 13.5
+                    </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Problem 6 -->
+            <div id="problem-6" class="problem-container" style="display: none;">
+                <div class="row">
+                    <!-- Problem Description on the left -->
+                    <div class="col-md-5">
+                        <div class="problem-description">
+                            <h4>Problem Description</h4>
+                            <!-- Image switch button -->
+                            <div class="image-selector" style="margin-bottom: 10px; text-align: center;">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="image selector">
+                                    <button type="button" class="btn btn-outline-info image-btn active"
+                                        onclick="changeImage(6, 'original')">Original</button>
+                                    <button type="button" class="btn btn-outline-info image-btn"
+                                        onclick="changeImage(6, 'annotated')">Annotated</button>
+                                </div>
+                            </div>
+
+                            <!-- Image container -->
+                            <div class="image-container">
+                                <img id="image-6-original" src="./img/2483_diagram.png" alt="Original Diagram"
+                                    style="display: block;">
+                                <img id="image-6-annotated" src="./img/2483_annotated.png" alt="Annotated Diagram"
+                                    style="display: none;">
+                            </div>
+
+                            <p style="text-align: left;">
+                                Find Q P.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- content on the right -->
+                    <div class="col-md-7">
+                        <!-- view selector button -->
+                        <div class="view-selector" style="margin-bottom: 15px; text-align: center;">
+                            <div class="btn-group" role="group" aria-label="view selector">
+                                <button type="button" class="btn btn-outline-secondary view-btn active"
+                                    onclick="changeView(6, 'formalization')">Formalization</button>
+                                <button type="button" class="btn btn-outline-secondary view-btn"
+                                    onclick="changeView(6, 'proof-graph')">Proof Graph</button>
+                                <button type="button" class="btn btn-outline-secondary view-btn"
+                                    onclick="changeView(6, 'solution')">Stepwise Solution</button>
+                            </div>
+                        </div>
+
+                        <!-- view content -->
+                        <div class="view-content">
+                            <div id="view-6-formalization" class="view-item active">
+                                <pre
+                                    style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;">
+PointLiesOnLine(Q, Line(M, P))
+PointLiesOnLine(N, Line(M, O))
+Parallel(Line(Q, N), Line(P, O))
+Equals(LengthOf(Line(M, N)), 6)
+Equals(LengthOf(Line(M, Q)), 5)
+Equals(LengthOf(Line(O, N)), 3+\frac{3}{5})
+Equals(LengthOf(Line(P, Q)), x)
+Find(LengthOf(Line(Q,P)))
+                    </pre>
+                            </div>
+                            <div id="view-6-proof-graph" class="view-item" style="display: none;">
+                                <img src="./img/2483_proof_graph.png" alt="problem 5 proof graph"
+                                    style="max-width: 100%; margin: 0 auto; display: block;">
+                            </div>
+                            <div id="view-6-solution" class="view-item" style="display: none;">
+                                <pre
+                                    style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;">
+1: Known facts: start ⇒ 3 + 3 / 5 = NO, 5 = MQ, ∠QMO, ∠OPM, 6 = MN, ∠PMO, ∠OPM, NQ || OP, N on MO, ∠NQM, 3.14 = pi, x = PQ, Q on MP
+2: Reverse Angle Definition: ∠OPM ⇒ ∠OPM = 2 * pi - ∠MPO
+3: Corresponding Angle Theorem: NQ || OP ⇒ ∠MNQ = ∠MOP, ∠MPO = ∠MQN
+4: Line Segment Split: N on MO ⇒ MO = MN + NO
+5: Same Angle: N on MO, ∠QMO ⇒ ∠QMN = ∠QMO
+6: Reverse Angle Definition: ∠NQM ⇒ ∠NQM = 2 * pi - ∠MQN
+7: Same Angle: Q on MP, ∠OPM ⇒ ∠OPM = ∠OPQ
+8: Same Angle: Q on MP, ∠PMO ⇒ ∠PMO = ∠QMO
+9: Line Segment Split: Q on MP ⇒ MP = MQ + PQ
+10: Substitution: 3 + 3 / 5 = NO, MO = MN + NO, 6 = MN ⇒ 6 + (3 + 3 / 5) = MO
+11: Substitution: ∠NQM = 2 * pi - ∠MQN, 3.14 = pi ⇒ ∠NQM = 2 * 3.14 - ∠MQN
+12: Substitution: 3.14 = pi, ∠MPO = ∠MQN, ∠OPM = 2 * pi - ∠MPO, ∠OPM = ∠OPQ ⇒ ∠OPQ = 2 * 3.14 - ∠MQN
+13: Transtivity of Equivalence: ∠QMN = ∠QMO, ∠PMO = ∠QMO ⇒ ∠PMO = ∠QMN
+14: Substitution: 5 = MQ, MP = MQ + PQ, x = PQ ⇒ 5 + x = MP
+15: Solve Linear Equation System: 6 + (3 + 3 / 5) = MO ⇒ 9.6 = MO
+16: Transtivity of Equivalence: ∠NQM = 2 * 3.14 - ∠MQN, ∠OPQ = 2 * 3.14 - ∠MQN ⇒ ∠NQM = ∠OPQ
+17: Transtivity of Equivalence: ∠NQM = ∠OPQ, ∠OPM = ∠OPQ ⇒ ∠NQM = ∠OPM
+18: Angle-Angle Similarity Theorem: ∠NQM = ∠OPM, ∠MNQ = ∠MOP, ∠PMO = ∠QMN ⇒ △MNQ ~ △MOP
+19: Similar Definition: △MNQ ~ △MOP ⇒ sim_ratio_triangle_m_n_q_triangle_m_o_p = MQ / MP, ∠PMO = ∠QMN, sim_ratio_triangle_m_n_q_triangle_m_o_p = MN / MO, ∠MNQ = ∠MOP, ∠MPO = ∠MQN
+20: Substitution: sim_ratio_triangle_m_n_q_triangle_m_o_p = MQ / MP, 5 = MQ, 5 + x = MP ⇒ sim_ratio_triangle_m_n_q_triangle_m_o_p = 5 / (5 + x)
+21: Substitution: sim_ratio_triangle_m_n_q_triangle_m_o_p = MN / MO, 9.6 = MO, 6 = MN ⇒ 6 / 9.6 = sim_ratio_triangle_m_n_q_triangle_m_o_p
+22: Transtivity of Equivalence: sim_ratio_triangle_m_n_q_triangle_m_o_p = 5 / (5 + x), 6 / 9.6 = sim_ratio_triangle_m_n_q_triangle_m_o_p ⇒ 6 / 9.6 = 5 / (5 + x)
+23: Solve Linear Equation System: 6 / 9.6 = 5 / (5 + x), x = PQ ⇒ 3 = PQ
+Final answer: 3
+                    </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                // Change problem function
+                function changeProblem(problemId) {
+                    // Hide all problems
+                    document.querySelectorAll('.problem-container').forEach(container => {
+                        container.style.display = 'none';
+                    });
+
+                    // Show the selected problem
+                    document.getElementById('problem-' + problemId).style.display = 'block';
+
+                    // Update button active state
+                    document.querySelectorAll('.problem-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    event.target.classList.add('active');
+                }
+
+                // Change view function
+                function changeView(problemId, viewType) {
+                    // Hide all views
+                    document.querySelectorAll('#problem-' + problemId + ' .view-item').forEach(item => {
+                        item.style.display = 'none';
+                    });
+
+                    // Show the selected view
+                    document.getElementById('view-' + problemId + '-' + viewType).style.display = 'block';
+
+                    // Update button active state
+                    document.querySelectorAll('#problem-' + problemId + ' .view-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    event.target.classList.add('active');
+                }
+                // Change image function
+                function changeImage(problemId, imageType) {
+                    // Hide all images
+                    document.querySelectorAll('#problem-' + problemId + ' .image-container img').forEach(img => {
+                        img.style.display = 'none';
+                    });
+
+                    // Show the selected image
+                    document.getElementById('image-' + problemId + '-' + imageType).style.display = 'block';
+
+                    // Update button active state
+                    document.querySelectorAll('#problem-' + problemId + ' .image-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    event.target.classList.add('active');
+                }
+            </script>
+        </div>
+
+
+        <div class="'section" id="Paper" style="">
+            <heading>
+                Paper
+            </heading>
+            <p>
+                <a href="https://arxiv.org">AutoGPS: Automated Geometry Problem Solving via Multimodal Formalization and Deductive Reasoning</a>
+                <br>
+                <a>Bowen Ping, Chengyou Jia, Minnan Luo</a>
+            </p>
+        </div>
+
+
+        <!-- Code -->
+        <div class="section" id="Code" style="">
+            <heading>
+                Code
+            </heading>
+            <p>
+                View on <a href="https://github.com">GitHub</a>.
+            </p>
+        </div>
+
+        <!-- Citation -->
+        <div class="section" id="Citation" style="">
+            <heading>
+                Citation
+            </heading>
+            <p>
+                If our work helps you, please cite us:
+            </p>
+            <pre class="bibtax">
+                ......
+            </pre>
+        </div>
+
+        <!-- Authors -->
+        <div class="section" id="Authors" style="align-content: center">
+            <heading>
+                Authors
+            </heading>
+            <div style="text-align: center; width: 100%; padding-top: 1em;">
+                <div class="profile" style="">
+                    <a href="https://jayce-ping.github.io/homepage/">
+                        <img class="profile-img" src="./img/bowenping.jpeg" alt="" style="">
+                        <p>Bowen Ping<sup>1</sup></p>
+                    </a>
+                </div>
+                <div class="profile" style="">
+                    <a href="https://chengyou-jia.github.io/">
+                        <img class="profile-img" src="./img/chengyoujia.png" alt="" style="">
+                        <p>Chengyou Jia<sup>1</sup></p>
+                    </a>
+                </div>
+                <div class="profile" style="">
+                    <a href="https://scholar.google.com/citations?hl=en&user=C3ujEF0AAAAJ">
+                        <img class="profile-img" src="./img/minnanluo.jpeg" alt="" style="">
+                        <p>Minnan Luo<sup>1</sup></p>
+                    </a>
+                </div>
+            </div>
+            <div style="text-align:center; display: inline-block; width: 100%; margin-top: 0">
+                <p>
+                    <sup>1</sup>Xi'an Jiaotong University<br>
+                </p>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JavaScript -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!-- Necessary for user interaction -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+            integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+            integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+            crossorigin="anonymous"></script>
+
+</body>
+
+</html>
