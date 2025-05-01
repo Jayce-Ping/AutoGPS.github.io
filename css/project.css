@@ -30,7 +30,6 @@ hr {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
-body,
 td,
 th {
     font-family: Arial;
@@ -66,11 +65,15 @@ papername {
 
 /* page banner */
 .navbar {
-    margin-top: -60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     height: 50px;
-    background-color: #343a40
+    z-index: 1000;
+    background-color: #343a40;
 }
-
 
 .navbar-brand {
     margin-left: 10px;
@@ -173,66 +176,8 @@ papername {
     background-color: #ddd;
 }
 
-/*table tile*/
-#example th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    font-size: 16px;
-    text-align: center;
-    font-weight: 600;
-    background-color: #2774AE;
-    color: white;
-}
-
-/* class: images in the table */
-.example-text {
-    vertical-align: center;
-    display: table-cell;
-    *display: inline-block;
-}
-
-.example-img-block {
-    vertical-align: center;
-    text-align: center;
-}
-
-.example-img {
-    max-width: 150px;
-    max-height: 100px;
-}
-
-.example-choice {
-    white-space: nowrap;
-    vertical-align: center;
-    /*display: table-cell;*/
-    /**display: inline-block;*/
-}
-
-.example-text-liter {
-    font-family: Courier;
-    letter-spacing: -.3px;
-    vertical-align: center;
-    /*display: table-cell;*/
-    /**display: inline-block;*/
-}
-
-.example-diag-liter {
-    font-family: Courier;
-    letter-spacing: -0.3px;
-    vertical-align: center;
-    /*display: table-cell;*/
-    /**display: inline-block;*/
-}
-
-.example-text,
-.example-choice,
-.example-text-liter,
-.example-diag-liter {
-    font-size: 14px;
-}
-
 /*Sizes*/
-.navbar,
+
 .page-header {
     max-width: 700em;
 }
