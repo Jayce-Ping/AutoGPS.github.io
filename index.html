@@ -25,11 +25,10 @@
     <link rel="stylesheet" href="./css/project.css">
 </head>
 
-<body data-new-gr-c-s-check-loaded="14.1010.0" data-gr-ext-installed="">
-
+<body data-new-gr-c-s-check-loaded="14.1010.0">
     <!-- Navigation Bar-->
     <nav class="navbar navbar-expand-md navbar-dark">
-        <a class="navbar-brand" href="#">AutoGPS</a>
+        <a class=" navbar-brand" href="#">AutoGPS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,6 +36,12 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Intro">Intro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Examples">Examples</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#Paper">Paper</a>
@@ -66,11 +71,11 @@
     </header>
 
     <!-- About Inter-GPS -->
-    <div class="section" style="">
+    <div class="section" id='Intro' style="">
         <img src="./img/framework.png" style="width: 100%; padding-top: 1em">
         <br><br>
         <heading>
-            About AutoGPS
+            Introduction
         </heading>
         <p>
             Geometric problem solving presents distinctive challenges in artificial intelligence,
@@ -108,12 +113,18 @@
         <!-- 题目选择按钮 -->
         <div class="problem-selector" style="margin-bottom: 20px; text-align: center;">
             <div class="btn-group" role="group" aria-label="problem selector">
-                <button type="button" class="btn btn-outline-primary problem-btn active" onclick="changeProblem(1)">Problem 1</button>
-                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(2)">Problem 2</button>
-                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(3)">Problem 3</button>
-                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(4)">Problem 4</button>
-                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(5)">Problem 5</button>
-                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(6)">Problem 6</button>
+                <button type="button" class="btn btn-outline-primary problem-btn active"
+                    onclick="changeProblem(1)">Problem 1</button>
+                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(2)">Problem
+                    2</button>
+                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(3)">Problem
+                    3</button>
+                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(4)">Problem
+                    4</button>
+                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(5)">Problem
+                    5</button>
+                <button type="button" class="btn btn-outline-primary problem-btn" onclick="changeProblem(6)">Problem
+                    6</button>
             </div>
         </div>
 
@@ -500,7 +511,8 @@ Final answer: 0.52
                             </div>
 
                             <p style="text-align: left;">
-                                Find B D if B F bisects ∠ A B C and A C || E D, B A = 6, B C = 7.5, A C = 9, and D E = 9.
+                                Find B D if B F bisects ∠ A B C and A C || E D, B A = 6, B C = 7.5, A C = 9, and D E =
+                                9.
                             </p>
                         </div>
                     </div>
@@ -727,7 +739,8 @@ Final answer: 3
                 Paper
             </heading>
             <p>
-                <a href="https://arxiv.org">AutoGPS: Automated Geometry Problem Solving via Multimodal Formalization and Deductive Reasoning</a>
+                <a href="https://arxiv.org">AutoGPS: Automated Geometry Problem Solving via Multimodal Formalization and
+                    Deductive Reasoning</a>
                 <br>
                 <a>Bowen Ping, Chengyou Jia, Minnan Luo</a>
             </p>
