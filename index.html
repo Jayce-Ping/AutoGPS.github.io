@@ -70,7 +70,7 @@
         </h2>
     </header>
 
-    <!-- About Inter-GPS -->
+    <!-- About AutoGPS -->
     <div class="section" id='Intro'>
         <img src="./img/framework.png" style="width: 100%; padding-top: 1em">
         <br><br>
@@ -78,26 +78,20 @@
             Introduction
         </heading>
         <p>
-            Geometric problem solving presents distinctive challenges in artificial intelligence,
-            requiring not only robust multimodal comprehension but also exceptional mathematical reasoning capabilities.
-            <i>Current methodologies exhibit deficiencies in processing multimodal information while being constrained
-                by limited interpretability and reliability in their reasoning processes.</i>
-            <br><br>
-            To address these challenges, we propose <strong>AutoGPS</strong>,
-            a neuro-symbolic framework that synergistically integrates the multimodal understanding strengths of neural
-            methods with the rigorous reasoning capabilities of symbolic systems for automated geometric reasoning.
-            Specifically, AutoGPS employs <strong>a multimodal formalization framework</strong> to systematically
-            translate geometry problems described through textual and visual modalities into structured formal language
-            representations.
-            This is followed by <strong>deductive symbolic reasoning</strong> operations that execute mathematically
-            verifiable derivations,
-            yielding <i>human-readable solving procedures</i>.
-            <br><br>
-            Extensive experimental evaluations demonstrate that our method establishes new state-of-the-art performance
-            on benchmark datasets (Geometry3K and PGPS9K),
-            while significantly enhancing interpretability through verifiable proof generation.
-            Furthermore, leveraging enhanced interpretability and deductive rigor,
-            we identified and rectified inherent inconsistencies within the Geometry3K dataset.
+Geometry problem solving presents distinctive challenges in artificial intelligence,
+requiring exceptional multimodal comprehension and rigorous mathematical reasoning capabilities.
+Existing approaches typically fall into two categories: neural-based and symbolic-based methods,
+both of which exhibit <i>limitations in reliability and interpretability</i>.
+To address this challenge, we propose <strong>AutoGPS</strong>,
+<i>a neuro-symbolic collaborative framework that solves geometry problems with concise, reliable, and human-interpretable reasoning processes.</i>
+Specifically, AutoGPS employs a Multimodal Problem Formalizer (MPF) and a Deductive Symbolic Reasoner (DSR).
+The MPF utilizes neural cross-modal comprehension to translate geometry problems into structured formal language representations,
+with feedback from DSR collaboratively.
+The DSR takes the formalization as input and formulates geometry problem solving as a hypergraph expansion task,
+executing mathematically rigorous and reliable derivation to produce minimal and human-readable stepwise solutions.
+Extensive experimental evaluations demonstrate that AutoGPS achieves state-of-the-art performance on benchmark datasets.
+Furthermore, <i>human stepwise-reasoning evaluation confirms AutoGPS's impressive reliability and interpretability,
+with 99\% stepwise logical coherence.</i>
         </p>
     </div>
 
@@ -110,7 +104,7 @@
         <p>The following examples illustrate the AutoGPS framework's capabilities in solving geometry problems.
             Click on the buttons below to switch between different problems and views.</p>
 
-        <!-- 题目选择按钮 -->
+        <!-- Button -->
         <div class="problem-selector" style="margin-bottom: 20px; text-align: center;">
             <div class="btn-group" role="group" aria-label="problem selector">
                 <button type="button" class="btn btn-outline-primary problem-btn active"
@@ -128,7 +122,7 @@
             </div>
         </div>
 
-        <!-- 问题内容 -->
+        <!-- Problem content -->
         <div id="problem-content">
             <!-- Problem 1 -->
             <div id="problem-1" class="problem-container active">
@@ -741,7 +735,7 @@ Final answer: 3
             <p>
                 <a href="https://arxiv.org">AutoGPS: Automated Geometry Problem Solving via Multimodal Formalization and Deductive Reasoning</a>
                 <br>
-                <a>Bowen Ping, Chengyou Jia, Minnan Luo</a>
+                <a>Bowen Ping, Minnan Luo, Zhuohang Dang, Chenxi Wang, Chengyou Jia</a>
             </p>
         </div>
 
